@@ -1,0 +1,4 @@
+/* pages/listpage/listpage.wxss */
+page{
+  background-color: #d4e2e7;
+}

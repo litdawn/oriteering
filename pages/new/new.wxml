@@ -1,0 +1,187 @@
+<view class="{{beforeStart?'beforeStart_view_show':'beforeStart_view_hide'}}">
+    <view class="startbtn">
+        <van-button round size="large" color="#47acac" bindtap="onStart">开始</van-button>
+    </view>
+</view>
+
+
+<view class="{{afterStart?'afterStart_view_show':'afterStart_view_hide'}}">
+    <van-tabs active="{{ active }}" bind:change="onTabChange">
+        <van-tab title="总成绩">
+            <!-- 表格 -->
+            <view class="viewtable" style="height:{{viewTableHeight}}px">
+            <view class="table">
+                <view class="blank" ></view>
+                <scroll-view class="tableX">
+                    <!-- 表头 -->
+                    <view id="tabbar" class="tr" style="background:#c4c9c9;">
+                        <view class="ta">序号</view>
+                        <view class="tb">用户名</view>
+                        <view class="td">路线</view>
+                        <view class="tc">完成时间</view>
+                    </view>
+                    <!-- 内容 -->
+                    <!-- 除表头外纵向滑动 -->
+                    <scroll-view class="tableY" scroll-y style="height:{{scroll_height}}px">
+                        <block wx:for="{{scorelist}}">
+                            <view class="tr" wx:key="index" style="background:#ffffff;" wx:if="{{index%2===0}}">
+                                <view class="tno">{{index}}</view>
+                                <view class="tname">{{item.name}}</view>
+                                <view class="troute">{{item.routeNO}}</view>
+                                <view class="ttime">{{item.sumOfTime}}</view>
+                            </view>
+                            <view class="tr" wx:key="index" style="background:#eaecec;" wx:else>
+                                <view class="tno">{{index}}</view>
+                                <view class="tname">{{item.name}}</view>
+                                <view class="troute">{{item.routeNO}}</view>
+                                <view class="ttime">{{item.sumOfTime}}</view>
+                            </view>
+                        </block>
+                    </scroll-view>
+                </scroll-view>
+            </view>
+            </view>
+        </van-tab>
+
+        <van-tab title="{{item}}" wx:for="{{pointslist}}">
+            <!-- 表格 -->
+            <view class="viewtable">
+            <view class="table">
+                <scroll-view class="tableX">
+                    <!-- 表头 -->
+                    <view class="tr" style="background:#c4c9c9;">
+                        <view class="ta">序号</view>
+                        <view class="tb">用户名</view>
+                        <view class="td">路线</view>
+                        <view class="tc">到达时间</view>
+                    </view>
+                    <!-- 内容 -->
+                    <!-- 除表头外纵向滑动 -->
+                    <scroll-view class="tableY" scroll-y style="height: 900rpx;">
+                        <block wx:for="{{tablist}}">
+                            <view class="tr" wx:key="index" style="background:#ffffff;" wx:if="{{index%2===0}}">
+                                <view class="tno">{{index}}</view>
+                                <view class="tname">{{item.name}}</view>
+                                <view class="troute">{{item.routeNO}}</view>
+                                <view class="ttime">{{item.curTime}}</view>
+                            </view>
+                            <view class="tr" wx:key="index" style="background:#eaecec;" wx:else>
+                                <view class="tno">{{index}}</view>
+                                <view class="tname">{{item.name}}</view>
+                                <view class="troute">{{item.routeNO}}</view>
+                                <view class="ttime">{{item.curTime}}</view>
+                            </view>
+                        </block>
+                    </scroll-view>
+                </scroll-view>
+            </view>
+        </view>
+        </van-tab>
+    </van-tabs>
+  
+
+    
+
+    <view id="button" class="terminate_btn">
+        <van-button block color="#47acac" bindtap="onTerminate" size="large" disabled="{{cannotClick}}">结束活动</van-button>
+    </view>
+</view>
+
+
+
+
+
+
+<view class="{{afterStart_team?'afterStart_view_show':'afterStart_view_hide'}}">
+    <van-tabs active="{{ active }}" bind:change="onTabChange">
+        <van-tab title="总成绩">
+            <!-- 表格 -->
+            <view class="viewtable">
+            <view class="table">
+                <view class="blank" ></view>
+                <scroll-view class="tableX">
+                    <!-- 表头 -->
+                    <view class="tr" style="background:#c4c9c9;">
+                        <view class="ta">序号</view>
+                        <view class="te">组别</view>
+                        <view class="tb1">用户名</view>
+                        <view class="td">路线</view>
+                        <view class="tc">完成时间</view>
+                    </view>
+                    <!-- 内容 -->
+                    <!-- 除表头外纵向滑动 -->
+                    <scroll-view class="tableY" scroll-y style="height: 900rpx;">
+                        <block wx:for="{{scorelist}}">
+                            <view class="tr" wx:key="index" style="background:#ffffff;" wx:if="{{index%2===0}}">
+                                <view class="tno">{{index}}</view>
+                                <view class="tgroup">{{item.groupid}}</view>
+                                <view class="tname1">{{item.name}}</view>
+                                <view class="troute">{{item.routeNO}}</view>
+                                <view class="ttime">{{item.sumOfTime}}</view>
+                            </view>
+                            <view class="tr" wx:key="index" style="background:#eaecec;" wx:else>
+                                <view class="tno">{{index}}</view>
+                                <view class="tgroup">{{item.groupid}}</view>
+                                <view class="tname1">{{item.name}}</view>
+                                <view class="troute">{{item.routeNO}}</view>
+                                <view class="ttime">{{item.sumOfTime}}</view>
+                            </view>
+                        </block>
+                    </scroll-view>
+                </scroll-view>
+            </view>
+            </view>
+        </van-tab>
+
+        <van-tab title="{{item}}" wx:for="{{pointslist}}">
+            <!-- 表格 -->
+            <view class="viewtable">
+            <view class="table">
+                <scroll-view class="tableX">
+                    <!-- 表头 -->
+                    <view class="tr" style="background:#c4c9c9;">
+                        <view class="ta">序号</view>
+                        <view class="te">组别</view>
+                        <view class="tb1">用户名</view>
+                        <view class="td">路线</view>
+                        <view class="tc">到达时间</view>
+                    </view>
+                    <!-- 内容 -->
+                    <!-- 除表头外纵向滑动 -->
+                    <scroll-view class="tableY" scroll-y style="height: 900rpx;">
+                        <block wx:for="{{tablist}}">
+                            <view class="tr" wx:key="index" style="background:#ffffff;" wx:if="{{index%2===0}}">
+                                <view class="tno">{{index}}</view>
+                                <view class="tgroup">{{item.groupid}}</view>
+                                <view class="tname1">{{item.name}}</view>
+                                <view class="troute">{{item.routeNO}}</view>
+                                <view class="ttime">{{item.curTime}}</view>
+                            </view>
+                            <view class="tr" wx:key="index" style="background:#eaecec;" wx:else>
+                                <view class="tno">{{index}}</view>
+                                <view class="tgroup">{{item.groupid}}</view>
+                                <view class="tname1">{{item.name}}</view>
+                                <view class="troute">{{item.routeNO}}</view>
+                                <view class="ttime">{{item.curTime}}</view>
+                            </view>
+                        </block>
+                    </scroll-view>
+                </scroll-view>
+            </view>
+        </view>
+        </van-tab>
+    </van-tabs>
+  
+
+    
+
+    <view class="terminate_btn">
+        <van-button block color="#47acac" bindtap="onTerminate" size="large" disabled="{{cannotClick}}">结束活动</van-button>
+    </view>
+</view>
+
+
+
+
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />

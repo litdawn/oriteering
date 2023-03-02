@@ -1,0 +1,69 @@
+/**index.wxss**/
+
+page{
+  background-color: #c1dcdd;
+}
+
+
+
+.button{
+  margin: 15rpx;
+}
+
+
+
+.userinfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #aaa;
+  }
+  
+  .userinfo-avatar {
+    overflow: hidden;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
+  }
+  
+  .usermotto {
+    margin-top: 200px;
+  }
+  .view {
+      padding: 5px;
+      color: #646566;
+  }
+ 
+  .blank1{
+    height: 19rpx;
+    background-color: #ffffff;
+    border-top-left-radius:20rpx;
+	border-top-right-radius:20rpx;
+  }
+  .blank2{
+    height: 19rpx;
+    background-color: #ffffff;
+    border-bottom-left-radius:20rpx;
+	border-bottom-right-radius:20rpx;
+  }
+  
+  /*活动地点三级*/
+  .dt{width:64rpx;height:56rpx;}
+  .flex-row {display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-orient: horizontal;flex-direction: row;}
+  .flex-col {display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-orient: vertical;flex-direction: column;}
+  .flex-grow-0 {min-width: 0;-webkit-box-flex: 0;-ms-flex-positive: 0;flex-grow: 0;-ms-flex-negative: 0;flex-shrink: 0;}
+  .flex-grow-1 {min-width: 0;-webkit-box-flex: 1;-ms-flex-positive: 1;flex-grow: 1;-ms-flex-negative: 1;flex-shrink: 1;}
+  .flex-x-center {display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-pack: center;-ms-flex-pack: center;justify-content: center;}
+  .flex-y-center {display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-align: center;-ms-flex-align: center;-ms-grid-row-align: center;align-items: center;}
+  .flex-y-bottom {display: -webkit-box;display: -webkit-flex;display: flex;-webkit-box-align: end;-ms-flex-align: end;-ms-grid-row-align: flex-end;align-items: flex-end;
+  }
+  
+  /*团队赛具体信息显示*/
+  .header_view_hide{
+    display: none;
+  }
+  .header_view_show{
+    display: block;
+  }
+  

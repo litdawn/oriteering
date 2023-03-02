@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "van-toast": "/miniprogram_npm/@vant/weapp/toast/index"
+  },
+  "navigationBarTitleText": "人员列表"
+}

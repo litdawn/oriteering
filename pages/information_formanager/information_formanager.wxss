@@ -1,0 +1,39 @@
+/* pages/information_formanager/information_formanager.wxss */
+page{
+  background-color: #c1dcdd;
+
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+
+}
+.button3{
+  margin: 15rpx;
+}
+.button2{
+    margin: 15rpx;
+}
+
+.button {
+  margin-left: 25px;
+}
+
+.header_view_hide{
+  display: none;
+}
+
+.header_view_show{
+
+  display: block;
+}
+
+.canvas{
+  border:1rpx solid #eee;
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.text{
+  color: #323233;
+  text-align: center;
+}

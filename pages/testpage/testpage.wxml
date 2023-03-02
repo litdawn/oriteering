@@ -1,0 +1,43 @@
+<!-- 地图（自动定位学校位置）目前不用
+<map longitude="{{mapLongitude}}" latitude="{{mapLatitude}}" ></map> -->
+
+<!-- 弹窗 -->
+<van-toast id="van-toast" />
+
+<!-- 打卡输入框 -->
+<van-field
+  value="{{initialValue}}"
+  label="打卡"
+  placeholder="请输入点标旗序号完成打卡"
+  bind:blur="getInputCode"
+/>
+
+<!-- 二维码扫描按键 -->
+<view class="button">
+<van-button size="large" color="#47acac" bindtap="getQRCode" block>扫一扫</van-button>
+</view>
+
+<!-- 打卡记录折叠面板 -->
+<van-collapse value="{{ activeNames_point }}" bind:change="onChange_point">
+  <van-collapse-item title="打卡记录" name="1">
+    <van-steps
+    steps="{{steps}}"
+    active="{{active_step}}"
+    direction="vertical"
+    active-color="#47acac"
+  />
+  </van-collapse-item>
+</van-collapse>
+
+<!-- 最终成绩单折叠面板 -->
+<van-collapse value="{{ activeNames_rank }}" bind:change="onChange_rank">
+  <van-collapse-item title="最终成绩单" name="1">
+    <text>{{finalResult}}</text>
+  </van-collapse-item>
+</van-collapse>
+
+<!-- 打印最终成绩按钮 -->
+<view class="button">
+<van-button size="large" color="#47acac" block bindtap="getFinalResult">提交最终成绩</van-button>
+</view>
+<text>\n</text>

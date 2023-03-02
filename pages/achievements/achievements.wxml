@@ -1,0 +1,86 @@
+<!--pages/achievements/achievements.wxml-->
+<text>\n\n</text> 
+<van-row>
+<van-col offset="5">
+<van-circle
+  value="{{ percentage }}"
+  stroke-width="20"
+  color="#338b8a"
+  clockwise="{{ false }}"
+  text="{{hadachievements.length}}/{{yetachievements.length+hadachievements.length}}"
+  size="200"
+/>
+<van-button bind:click="onClick" small icon="share-o" round></van-button>
+
+</van-col>
+</van-row>
+<text>\n</text>
+<van-row>
+<van-col offset="1.5"span="5">
+<view class="blank"></view>
+  <van-image
+      round
+      width="3.8rem"
+      height="3.8rem"
+      fit="cover"
+      wx:for="{{hadachievements}}"
+      wx:for-item="achievements"
+      src="{{achievements.icon}}"
+    />
+    <van-image
+      round
+      width="3.8rem"
+      height="3.8rem"
+      fit="cover"
+      wx:for="{{yetachievements}}"
+      wx:for-item="achievements"
+      src="{{achievements.icon}}"
+    />
+</van-col>
+  <van-col span="16" >
+  <view class="view" 
+      wx:for="{{hadachievements}}"
+      wx:key="id" 
+      wx:for-item="achievements"
+>
+      <text>{{achievements.name}}：{{achievements.condition}}</text>
+    
+  </view>
+  <view class="view"
+      wx:key="id" 
+      wx:for-item="achievements"
+      wx:for="{{yetachievements}}">
+      <text>{{achievements.name}}：{{achievements.condition}}</text>
+      </view>
+    <!-- <van-grid 
+    direction="horizontal" 
+    gutter="{{ 8 }}"
+    column-num="1" >
+    <van-grid-item  
+      clickable
+      bindtap="onJump"
+      text="{{achievements.name}}：{{achievements.condition}}"
+      wx:key="id" 
+      wx:for-item="achievements"
+      data-buttomMsg = "{{hadachievements}}"
+      wx:for="{{hadachievements}}">
+      </van-grid-item>
+      <van-grid-item  
+      clickable
+      bindtap="onJump"
+      text="{{achievements.name}}：{{achievements.condition}}"
+      wx:key="id" 
+      wx:for-item="achievements"
+      data-buttomMsg = "{{yetachievements}}"
+      wx:for="{{yetachievements}}">
+      </van-grid-item>
+    </van-grid> -->
+  </van-col>
+</van-row>
+<van-share-sheet
+  show="{{ showShare }}"
+  title="立即分享给好友"
+  options="{{ options }}"
+  bind:select="onSelect"
+  bind:close="onClose"
+/>

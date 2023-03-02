@@ -1,0 +1,92 @@
+<!--pages/detailpage_formanager/detailpage_formanager.wxml-->
+<!-- <van-notice-bar
+scrollable
+color="#1989fa"
+background="#ecf9ff"
+text="在开始活动之前可以随时修改打卡设置哦~" /> -->
+
+<van-popup
+  round
+  show="{{ showPopup }}"
+  position="top"
+  custom-style="height: 35%;"
+  bind:close="onClosePopup"
+>
+<view class="popup">
+<text class="text_body">致活动管理者：
+
+【打卡点】
+打卡点分为两种：一种是系统默认打卡点，包括“CLEAR”清除点、“START”起点、“THE END”终点；另一种是常规点，即活动中除去清除点、起点和终点以外的其他打卡点。
+打卡设置时只考虑常规点。
+
+【建议】
+请在活动开始前进行打卡点、打卡路线设置。随时可修改。
+如果选择使用二维码打卡，请在比赛前自行打印二维码，建议使用硬卡纸。
+请在做好准备工作后在【活动管理】中点击开始，届时参赛者可以进行打卡。
+请在参赛者全部结束打卡后在【活动管理】中点击结束，届时打卡功能关闭。
+</text>
+</view>
+</van-popup>
+
+<text>\n</text>
+<view class="view" >
+
+<text class="text_title">#{{actId}} </text>
+<text class="text_title">{{actName}}</text>
+
+<text class="text_body">
+
+活动主办方：{{actHost}}
+活动时间：{{actTime}}
+活动地点：{{actArea}}</text>
+
+</view>
+
+<text>\n</text>
+
+
+<van-cell-group inset>
+
+<van-cell 
+  is-link
+  size="large" 
+  icon="share-o"
+  title="邀请" 
+  bind:click="onClick" />
+
+<van-share-sheet
+  show="{{ showShare }}"
+  title="立即分享给好友"
+  options="{{ options }}"
+  bind:select="onSelect"
+  bind:close="onClose"
+/>
+<van-cell 
+  is-link
+  size="large" 
+  icon="star-o"
+  title="管理指南（新手必看）" 
+  bind:click="onClickPopup" />
+<van-cell
+  is-link
+  size="large"
+  title="打卡设置"
+  icon="description"
+  bind:click="onLinkToInformation"
+/>
+<van-cell
+  is-link
+  size="large"
+  icon="contact"
+  title="参与者列表"
+  bind:click="onLinkToList"
+/>
+<van-cell
+  is-link
+  size="large"
+  icon="bar-chart-o"
+  title="活动管理"
+  bind:click="onLinkToManage"
+  
+/>
+</van-cell-group>

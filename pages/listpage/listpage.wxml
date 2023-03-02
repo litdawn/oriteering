@@ -1,0 +1,15 @@
+<!--pages/listpage/listpage.wxml-->
+
+<!-- managers -->
+<van-cell-group title="管理员({{managerNUM}})" >
+  <van-cell icon="manager-o" wx:for="{{managerArray}}" wx:for-item="manager" title="{{manager}}">
+    <van-icon slot="right-icon" name="exchange" class="custom-icon" data-name="{{manager}}"bind:click="OnMinusManager"  />
+  </van-cell>
+</van-cell-group>
+
+<van-cell-group title="参赛者({{partNUM}})" >
+  <van-cell wx:for="{{participantArray}}" wx:for-item="participant" title="{{participant}}">
+    <van-icon slot="right-icon" name="exchange" class="custom-icon" data-name="{{participant}}"bind:click="OnAddManager"  />
+  </van-cell>
+  </van-cell-group>
+  <van-toast id="van-toast" />

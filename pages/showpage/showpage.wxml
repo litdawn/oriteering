@@ -1,0 +1,115 @@
+<view class="view">
+  <view class="blank1"></view>
+  <van-field
+    value="{{ activityname }}"
+    clearable
+    label="活动名称"
+    placeholder="请输入活动名称"
+    size="large"
+    bind:change="onActivityNameChange"
+  />
+
+  <van-field
+    value="{{ host }}"
+    clearable
+    label="主办方"
+    placeholder="请输入主办方"
+    autosize
+    size="large"
+    bind:change="onHostChange"
+  />
+
+
+  <van-field
+    value="{{ activitykey }}"
+    password
+    maxlength="4"
+    show-word-limit
+    label="活动密码"
+    placeholder="请设置4位密码"
+    size="large"
+    bind:change="onActivityKeyChange"
+  />
+
+  
+
+  <van-field
+    value="{{ date }}"
+    center
+    clearable
+    readonly
+    label="活动时间"
+    placeholder="请选择活动时间"
+    size="large"
+    use-button-slot
+    bind:change="onDateChange"
+  >
+
+  
+    <van-button slot="button" size="normal" type="primary" color="#47acac" bind:click="onDisplay" >
+      打开日历
+    </van-button>
+  </van-field>
+  <van-calendar show="{{ show }}" color="#47acac" bind:close="onClose" bind:confirm="onConfirm" />
+
+  <van-field
+    value="{{ areadetail }}"
+    center
+    clearable
+    readonly
+    label="活动地点"
+    placeholder="请选择活动地点"
+    size="large"
+    use-button-slot
+    bind:change="onAreaChange"
+  >
+  <van-button slot="button" size="normal" type="primary" color="#47acac" bind:click="onAreaDisplay" >
+      选择地点 
+    </van-button>
+  </van-field>
+  <van-popup show="{{areashow}}" position="bottom" custom-style="height: 50%;" bind:close="onpopclose">
+    <van-picker columns="{{columns}}" bind:change="onAreaChange" value-key="name" show-toolbar bind:confirm="onAreaConfirm" bind:cancel="onAreaCancel"/>
+  </van-popup>
+
+
+<!-- <view style='height:100rpx;background:#fff;border-bottom:1rpx solid #dfdbdc;line-height:84rpx;' class="view">
+  <view class="section__title" style='display:inline-block;text-indent:5rpx;float:left;'>
+    <text decode="true" space="true" color="#323233">&nbsp; 活动地点</text>
+  </view> 
+   <picker mode="region" bindchange="bindRegionChange" value="{{detailed}}" custom-item="{{customItem}}"  name="detailed" style='display:inline-block;width: 53%;margin-inline-start: 72rpx;color:#c8c9cc;height:75rpx;letter-spacing:normal;overflow: hidden;text-overflow: ellipsis;white-space: pre;'>
+    <view class="picker {{clas}}">{{detailed}}</view>
+  </picker> 
+
+</view> -->
+
+
+<van-dropdown-menu active-color="#47acac">
+    <van-dropdown-item value="{{ TypeValue }}" options="{{ TypeOption }}" bind:change="onFormatChange" />
+</van-dropdown-menu>
+
+<view class="{{showgroup?'header_view_show':'header_view_hide'}}">
+    <van-cell size="large" title="小队人数">
+      <van-stepper value="{{ groupMemberNum }}" min="1" max="6" bind:change="onSetMemberNum" />
+    </van-cell>  
+    <van-field
+    value="{{ groupkey }}"
+    password
+    maxlength="4"
+    show-word-limit
+    label="队长密钥"
+    placeholder="请设置4位密码"
+    size="large"
+    bind:change="onGroupKeyChange"
+    />
+</view>
+<view class="blank2"></view>
+</view>
+
+
+<view class="button">
+  <van-button bindtap="onCheck" size="large" color="#47acac" block >提交</van-button>
+</view>
+
+
+
+<van-toast id="van-toast" />

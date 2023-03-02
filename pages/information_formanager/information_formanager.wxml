@@ -1,0 +1,271 @@
+<!--pages/information_formanager/information_formanager.wxml-->
+
+<van-cell-group title="基本信息">
+<van-field
+    value="{{actName}}"
+    clearable
+    label="活动名称"
+    size="large"
+    readonly="true"
+  />
+<van-field
+    value="{{actHost}}"
+    clearable
+    label="主办方"
+    size="large"
+    readonly="true"
+  />
+  <van-field
+    value="{{actTime}}"
+    clearable
+    label="活动时间"
+    size="large"
+    readonly="true"
+  />
+  <van-field
+    value="{{actArea}}"
+    clearable
+    label="活动地点"
+    size="large"
+    readonly="true"
+  />
+  <van-field
+    value="{{actSystem}}"
+    clearable
+    label="赛制"
+    size="large"
+    readonly="true"
+
+  />
+
+</van-cell-group>
+
+<!-- 活动state=2，管理员随时打开都能看到已经编辑的内容，并且可以进行update修改（提交操作后再备份） -->
+<view  class="{{actState==2?'header_view_show':'header_view_hide'}}">
+
+<van-cell-group title="打卡点设置">
+
+  <van-steps steps="{{ manager_steps }}" active="{{ manager_active }}" active-color="#47acac" />
+
+<!-- step0 -->
+  <view  class="{{manager_active==-1?'header_view_show':'header_view_hide'}}">
+  </view>
+
+<!-- step1 步骤一 -->
+  <view  class="{{manager_active==0?'header_view_show':'header_view_hide'}}">
+
+          <!-- GPS功能未实现 -->
+          <van-dropdown-menu active-color="#47acac">
+            <!-- <van-dropdown-item value="{{ GPSValue }}" options="{{ GPSOption }}" bind:change="onGPSChange" /> -->
+            
+            <van-dropdown-item value="{{ methodValue }}" options="{{ methodOption }}" bind:change="onMethodChange" />
+          </van-dropdown-menu>
+
+          <van-cell size="large" title="打卡点个数">
+              <view>
+                <van-stepper value="{{ pointNum_input }}" min="3" max="40" bind:change="onStepperChange_Point" />
+              </view>
+          </van-cell>  
+
+          <van-cell size="large" title="路线个数">
+              <view>
+                <van-stepper value="{{ routeNum }}" min="1" max="5" bind:change="onStepperChange_Route" />
+              </view>
+          </van-cell>   
+          
+          
+          <van-field
+          value="{{order}}"
+          label="打卡点名称"
+          placeholder="英文逗号分隔（不包括起终点）"
+          size="large"
+          bind:change="fieldIn"
+          />
+  </view>
+
+<!-- step2 步骤二 -->
+  <view  class="{{manager_active==1?'header_view_show':'header_view_hide'}}">
+
+            <!-- 打卡点列表 -->
+                <van-cell-group>
+                      <view wx:for="{{points}}">            
+                            
+                            <!-- 每个打卡点之间加入空行 -->
+                            <text>\n</text>
+
+                            <van-cell-group inset>
+                                    <van-cell title="{{ item.title }}" label="" size="large" value="点标旗名称"  />
+                                    <!-- order -->
+
+                                    <!-- password -->
+                                    <van-field
+                                      label="password"
+                                      value="{{ item.password }}"
+                                      placeholder="请输入password"
+                                      size="large"
+                                      bind:change="updatePoints"
+                                      id="{{index}}->password"
+                                    />
+
+                                    <!-- title -->
+
+                                    <!-- weight -->
+
+                                    <!-- active -->
+
+                            </van-cell-group>
+                            
+                      </view>
+                </van-cell-group>
+         
+        <!-- 输入密码方式 -->
+        <!-- <view  class="{{showeviewKey?'header_view_show':'header_view_hide'}}">
+        </view> -->
+        
+
+  </view>
+
+<!-- step3 步骤三 -->
+  <view  class="{{manager_active==2?'header_view_show':'header_view_hide'}}">
+        <van-cell-group>
+              <!-- 比赛线路显示打卡点名字 -->
+              <van-collapse value="{{ active }}" bind:change="onChangeKey">
+                      <van-collapse-item title="打卡点列表" name="1">
+                            <view >
+                                  <view wx:for="{{points}}">
+                                      <text>{{item.title}}</text>                         
+                                  </view> 
+                            </view>
+                      </van-collapse-item>
+              </van-collapse>
+
+
+              <view wx:for="{{manager_routeArrayNeedFillin}}">
+                      <view wx:if="{{manager_routeArrayNeedFillin[index]}}">
+                              <van-field
+                              value="{{manager_route_origin[index]}}"
+                              
+                              label="比赛路线{{index+1}}"
+                              placeholder="英文逗号分隔 eg:a,b,c"
+                              size="large"
+                              bind:change="routeRead{{index+1}}"
+                              />
+                              <!-- TODO : value="{{order}}"   bind:change="fieldIn" -->
+                      </view>
+              </view>
+       </van-cell-group>
+  </view>
+  
+  </van-cell-group>
+
+<text>\n</text>
+
+<van-row>
+  <van-col span="8" offset="4">
+    <view class="button2">
+      <van-button disabled="{{isDisabled_ManagerButton1}}" size="large" block color="#47acac" bindtap="onManagerButton1">{{manager_button1}}</van-button>
+    </view>
+  </van-col>
+
+  <van-col span="8">
+    <view class="button2">
+      <van-button size="large" block color="#47acac" bindtap="onManagerButton2">{{manager_button2}}</van-button>
+    </view>
+  
+  </van-col>
+
+</van-row>
+
+</view>
+
+<!-- 活动state!=2，管理员随时打开都能看到已经编辑的内容，但是不能修改 -->
+<view  class="{{actState!=2?'header_view_show':'header_view_hide'}}">
+  
+      <van-cell-group title="比赛设置">
+            <!-- <van-field
+              value="{{GPSOption[GPSValue].text}}"
+              clearable
+              label="GPS设置："
+              size="large"
+              readonly="true"
+            /> -->
+            <van-field
+              value="{{ methodOption[methodValue].text }}"
+              clearable
+              label="打卡方式："
+              size="large"
+              readonly="true"
+            />
+            <van-field
+              value="{{pointNum}}"
+              clearable
+              label="打卡点个数："
+              size="large"
+              readonly="true"
+            />
+            <van-field
+              value="{{routeNum}}"
+              clearable
+              label="路线个数："
+              size="large"
+              readonly="true"
+            />
+            
+            <!-- 比赛线路显示打卡点名字 -->
+            <van-collapse value="{{ active }}" bind:change="onChangeKey">
+                    <van-collapse-item title="打卡点列表" name="1">
+                          <view >
+                                <van-field value="密码" label="名称" size="large" readonly="true" />  
+                                 
+                                <view wx:for="{{points}}">
+                                    <van-field value="{{item.password}}" label="{{item.title}}" size="large" readonly="true" />                     
+                                </view> 
+                          </view>
+                    </van-collapse-item>
+            </van-collapse>
+
+
+      </van-cell-group>
+
+
+</view>
+
+
+<!-- 扫描二维码方式 -->
+<!-- 使用扫描二维码方式，state等于2，在 step2 步骤二
+使用扫描二维码方式，state不等于2 -->
+<view  class="{{  (showviewQrcode && actState==2 && manager_active==1) || ( (showviewQrcode && (actState!=2))  ) ?'header_view_show':'header_view_hide'}}">
+
+
+<view class="button3">
+  <van-button bindtap="drawQR1" size="large" color="#47acac" block >打印二维码</van-button>
+</view>
+
+
+
+<view  class="{{showQr?'header_view_show':'header_view_hide'}}">
+
+      <van-collapse value="{{ active1 }}" bind:change="onChangeKey1">
+              <van-collapse-item title="二维码列表" name="1">
+              <!-- 此处加入二维码图片 -->
+              
+                    <view >
+                          <view wx:for="{{points}}" >
+                              <text bindtap="saveQRcode" data-buttomMsg = "{{item.title}}">{{item.title}} 保存图片</text>
+                              <canvas style="width: 200px; height: 200px;margin:0 auto" canvas-id="{{item.title}}"></canvas>
+                                                          
+                          </view> 
+                    </view>
+
+              </van-collapse-item>
+
+      </van-collapse>
+
+</view>
+
+
+</view>
+
+
+<!-- 弹窗 -->
+<van-toast id="van-toast" />

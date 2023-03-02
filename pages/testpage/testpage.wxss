@@ -1,0 +1,17 @@
+.content {
+  color:#454545;
+}
+.button {
+  margin: 25px;
+}
+page{
+  background-color: #e1e8ef;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+  
+
+}
+.button{
+  margin: 15rpx;
+}

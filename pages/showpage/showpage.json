@@ -1,0 +1,21 @@
+{
+    "usingComponents": {
+        "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+        "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+        "van-calendar": "/miniprogram_npm/@vant/weapp/calendar/index",
+        "van-dropdown-menu": "/miniprogram_npm/@vant/weapp/dropdown-menu/index",
+        "van-dropdown-item": "/miniprogram_npm/@vant/weapp/dropdown-item/index",
+        "van-switch": "/miniprogram_npm/@vant/weapp/switch/index",
+        "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+        "van-toast": "/miniprogram_npm/@vant/weapp/toast/index",
+        "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+        "van-stepper": "/miniprogram_npm/@vant/weapp/stepper/index",
+        "van-picker": "/miniprogram_npm/@vant/weapp/picker/index"
+      },
+
+    "window": {
+        
+    },
+    
+    "navigationBarTitleText": "发起活动"
+}

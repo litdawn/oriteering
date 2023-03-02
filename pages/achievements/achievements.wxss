@@ -1,0 +1,20 @@
+/* pages/achievements/achievements.wxss */
+page{
+    background-color: #d4e2e7;
+}
+.view{
+    border-radius: 15rpx;
+    height: 62rpx;
+    padding: 18rpx;
+    margin-top: 41rpx;
+    background:#fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; 
+    vertical-align: center;
+    align-items: center;
+    text-align: center;
+}
+.blank{
+    height: 20rpx;
+}

@@ -1,0 +1,59 @@
+/* pages/detailpage_formanager/detailpage_formanager.wxss */
+page{
+  background-color: #c1dcdd;
+  background-image: url('https://636c-cloud1-4gipvfh4f25a7740-1311027024.tcb.qcloud.la/%E6%9C%89%E7%BA%BF.png?sign=7926ab8bd0c16acaaf0475c2e4cb9871&t=1651197473');
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+
+}
+.view {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 20rpx;
+  margin: 25rpx;
+  /* box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15); */
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}
+.view2 {
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin-left: 50rpx;
+  margin-right: 50rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}
+
+
+.view_title{
+  background-color: #47acac;
+  padding: 15px;
+  border-radius: 20rpx;
+  margin: 25rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}
+
+.text_title {
+  font-size: 28px;
+  color: #003e42;
+  font-weight: bold;
+}
+.text_body {
+  font-size: 15px;
+  color: #363636;
+  font-weight: normal;
+
+}
+
+.popup{
+  padding: 15px;
+}

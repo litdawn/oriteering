@@ -1,0 +1,7 @@
+export const achievements=[
+    {id:0,name:'风驰电掣',icon:'https://636c-cloud1-4gipvfh4f25a7740-1311027024.tcb.qcloud.la/%E6%88%90%E5%B0%B1/%E9%A3%8E%E9%A9%B0%E7%94%B5%E6%8E%A3.png?sign=a3a9942304f567875d54ddd6fe2b57e3&t=1652598458',condition:'在5分钟内完成'},
+    {id:1,name:"积极分子",icon:"https://636c-cloud1-4gipvfh4f25a7740-1311027024.tcb.qcloud.la/%E6%88%90%E5%B0%B1/%E7%A7%AF%E6%9E%81%E5%88%86%E5%AD%90(1).png?sign=71a255a62ba87b7b49eac7c6618e3525&t=1652610390",condition:'参加10次活动'},
+    {id:2,name:"重头再来",icon:"https://636c-cloud1-4gipvfh4f25a7740-1311027024.tcb.qcloud.la/%E6%88%90%E5%B0%B1/%E4%BB%8E%E5%A4%B4%E5%86%8D%E6%9D%A5.png?sign=af4b4348cfc956f18d941fe41cdc42e1&t=1652610460",condition:'打卡clear点'},
+     {id:3,name:"起名鬼才",icon:"https://636c-cloud1-4gipvfh4f25a7740-1311027024.tcb.qcloud.la/%E6%88%90%E5%B0%B1/%E8%B5%B7%E5%90%8D%E9%AC%BC%E6%89%8D.png?sign=55e2c810dc8e2ad880882346422348ec&t=1653107092",condition:'昵称中包含某些特殊字符'},
+     {id:4,name:"一呼百应",icon:"https://636c-cloud1-4gipvfh4f25a7740-1311027024.tcb.qcloud.la/%E6%88%90%E5%B0%B1/%E4%B8%80%E5%91%BC%E7%99%BE%E5%BA%94.png?sign=6463f88d7986dfc131b418bd7d97a3c7&t=1653135957",condition:'成功发起一次活动'},
+     {id:5,name:"齐心协力",icon:"https://636c-cloud1-4gipvfh4f25a7740-1311027024.tcb.qcloud.la/%E6%88%90%E5%B0%B1/%E9%BD%90%E5%BF%83%E5%8D%8F%E5%8A%9B(1).png?sign=d39f37af95d3c693e71ff990bf77560b&t=1653139934",condition:"参加一次团队赛"}]

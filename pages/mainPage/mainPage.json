@@ -1,0 +1,27 @@
+{
+  "usingComponents": {
+    "van-collapse": "/miniprogram_npm/@vant/weapp/collapse/index",
+    "van-tabbar": "/miniprogram_npm/@vant/weapp/tabbar/index",
+    "van-tabbar-item": "/miniprogram_npm/@vant/weapp/tabbar-item/index",
+    "van-grid": "/miniprogram_npm/@vant/weapp/grid/index",
+    "van-grid-item": "/miniprogram_npm/@vant/weapp/grid-item/index",
+    "van-sidebar": "/miniprogram_npm/@vant/weapp/sidebar/index",
+    "van-sidebar-item": "/miniprogram_npm/@vant/weapp/sidebar-item/index",
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-row": "/miniprogram_npm/@vant/weapp/row/index",
+    "van-col": "/miniprogram_npm/@vant/weapp/col/index",
+    "van-dialog": "/miniprogram_npm/@vant/weapp/dialog/index",
+    "van-popup": "/miniprogram_npm/@vant/weapp/popup/index",
+    "van-field": "/miniprogram_npm/@vant/weapp/field/index",
+    "van-button": "/miniprogram_npm/@vant/weapp/button/index",
+    "van-toast": "/miniprogram_npm/@vant/weapp/toast/index",
+    "van-image": "/miniprogram_npm/@vant/weapp/image/index",
+    "van-circle": "/miniprogram_npm/@vant/weapp/circle/index",
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "van-tab": "/miniprogram_npm/@vant/weapp/tab/index",
+    "van-tabs": "/miniprogram_npm/@vant/weapp/tabs/index",
+    "van-transition": "/miniprogram_npm/@vant/weapp/transition/index"
+  },
+  "navigationBarTitleText": "首页"
+}

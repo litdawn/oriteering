@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "van-cell": "/miniprogram_npm/@vant/weapp/cell/index",
+    "van-cell-group": "/miniprogram_npm/@vant/weapp/cell-group/index",
+    "van-icon": "/miniprogram_npm/@vant/weapp/icon/index",
+    "van-share-sheet": "/miniprogram_npm/@vant/weapp/share-sheet/index",
+    "van-notice-bar": "/miniprogram_npm/@vant/weapp/notice-bar/index",
+    "van-popup": "/miniprogram_npm/@vant/weapp/popup/index"
+  },
+  "navigationBarTitleText": "活动详情"
+  
+}

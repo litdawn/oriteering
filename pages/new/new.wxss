@@ -1,0 +1,155 @@
+/* pages/new/new.wxss */
+page{
+    background-color: #c1dcdd;
+    background-image: url('https://636c-cloud1-4gipvfh4f25a7740-1311027024.tcb.qcloud.la/%E6%9C%89%E7%BA%BF.png?sign=7926ab8bd0c16acaaf0475c2e4cb9871&t=1651197473');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+  
+  }
+
+  .startbtn{
+    display:block;
+    margin:450rpx auto;
+    width: 80%;
+}  
+
+
+
+/*开始后开始按钮消失*/
+.beforeStart_view_hide{
+    display: none;
+  }
+.Start_view_show{
+    display: block;
+}
+
+
+  /*开始按钮后显示表格和结束按钮界面*/
+  .afterStart_view_hide{
+    display: none;
+  }
+  .afterStart_view_show{
+    display: block;
+  }
+
+
+.terminate_btn {
+    width: 100%;
+    position: fixed;
+    bottom:0rpx;
+}
+
+/* 项目表格 */
+.table {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* border-radius: 40rpx; */
+}
+
+.viewtable{
+    height: 600px;
+    border-radius: 20rpx;
+    margin: 15rpx;
+    box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+    background: rgba(134, 177, 180, 0.5);
+}
+
+.tableX {
+    
+    /* border-right: 0; */
+    /* border-bottom: 0; */
+    width: 100%;
+}
+.tr{
+    width: 708rpx;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.tableY {
+    width: 99%;
+    display: flex;
+    justify-content: flex-start;
+}
+.ta, .tno {
+    width: 82rpx;
+    padding: 10px 0;
+    /* border-right: 1px solid #000000;  */
+    /* border-bottom: 2px solid #f5111100;  */
+    
+    text-align: center;
+}
+
+.tb, .tname {
+    width: 420rpx;
+    padding: 10px 0;
+    
+    /* border-right: 1px solid #000000;  */
+    text-align: center;
+}
+.ttime{
+    width: 140rpx;
+    padding: 10px 0;
+    /* border-right: 1px solid #000000;  */
+    /* border-bottom: 1px solid #dadada;
+    border-right: 1px solid #dadada; */
+    
+    text-align: center;
+}
+.tc {
+    width: 140rpx;
+    padding: 10px 0;
+    /* border-right: 1px solid #000000;  */
+    /* border-bottom: 1px solid #dadada;
+    border-right: 1px solid #dadada; */
+    
+    text-align: center;
+}
+
+.td, .troute {
+    width: 70rpx;
+    padding: 10px 0;
+    /* border-right: 1px solid #000000;  */
+    /* border-bottom: 1px solid #dadada;
+    border-right: 1px solid #dadada; */
+    
+    text-align: center;
+}
+.ta, .tb, .tc, .td, .tb1, .te{
+    font-weight: bold;
+}
+
+
+.tr{
+    border-radius: 20rpx;
+    margin: 7rpx;
+}
+
+.blank{
+    height: 2rpx;
+    background-color: #b3b6b6;
+    border-top-left-radius:20rpx;
+	border-top-right-radius:20rpx;
+  }
+
+/*团队赛显示组别*/
+  .te,.tgroup {
+    width: 82rpx;
+    padding: 10px 0;
+    /* border-right: 1px solid #000000;  */
+    /* border-bottom: 2px solid #f5111100;  */
+    
+    text-align: center;
+}
+
+.tb1, .tname1 {
+    width: 300rpx;
+    padding: 10px 0;
+    
+    /* border-right: 1px solid #000000;  */
+    text-align: center;
+}

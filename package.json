@@ -1,0 +1,23 @@
+{
+  "name": "miniprogram-3",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://git.weixin.qq.com/wx_wxd5a931a128d49732/blank_ori.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@vant/area-data": "^1.2.4",
+    "@vant/weapp": "^1.10.2",
+    "node-xlsx": "^0.21.0",
+    "wx-server-sdk": "^2.6.1",
+    "wxml-to-canvas": "^1.1.1",
+    "wxmp-qrcode": "^2.0.3"
+  }
+}

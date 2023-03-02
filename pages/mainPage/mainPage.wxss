@@ -1,0 +1,48 @@
+/* pages/mainPage/mainPage.wxss */
+page{
+    background-color: #c1dcdd;
+    background-image: url('https://636c-cloud1-4gipvfh4f25a7740-1311027024.tcb.qcloud.la/%E6%9C%89%E7%BA%BF.png?sign=7926ab8bd0c16acaaf0475c2e4cb9871&t=1651197473');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+  
+  }
+
+.view{
+
+    border-radius: 20rpx;
+    margin: 15rpx;
+    box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+    background: rgba(134, 177, 180, 0.5);
+}
+
+.grid{
+    background-color: #ffffff;
+    height: 160rpx;
+    border-radius: 20rpx;
+    margin: 15rpx;
+    box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+    padding: 15rpx;
+    align-items: center;    /**子view垂直居中*/
+    vertical-align: center; /**垂直居中*/
+    justify-content: center; /**内容居中*/
+    flex-direction:column; 
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.text{
+    font-size: 27rpx;
+    color: rgb(87, 87, 87);
+    margin: 13rpx;
+}
+.button{
+    margin: 15rpx;
+  }
+
+.blank{
+    height: 19rpx;
+    background-color: #ffffff;
+    border-top-left-radius:20rpx;
+	border-top-right-radius:20rpx;
+  }

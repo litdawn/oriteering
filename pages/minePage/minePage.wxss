@@ -1,0 +1,35 @@
+/* pages/minePage/minePage.wxss */
+page{
+    background-color: #c1dcdd;
+    background-image: url('https://636c-cloud1-4gipvfh4f25a7740-1311027024.tcb.qcloud.la/%E6%9C%89%E7%BA%BF.png?sign=7926ab8bd0c16acaaf0475c2e4cb9871&t=1651197473');
+    background-repeat:no-repeat;
+    background-size:100% 100%;
+    -moz-background-size:100% 100%;
+  
+  }
+.view{
+    background-color: #ffffff;
+    border-radius: 20rpx;
+    margin: 30rpx;
+    box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+    padding: 25rpx;
+    align-items: center;    /**子view垂直居中*/
+    vertical-align: center; /**垂直居中*/
+    justify-content: center; /**内容居中*/
+    flex-direction:column; 
+    display: flex;
+    flex-wrap:wrap;
+    width: 500rpx;
+    height: 400rpx;
+}
+.view2 {
+  background-color: #fff;
+  border-radius: 20rpx;
+  margin: 45rpx;
+  padding-top: 5rpx;
+  padding-bottom: 5rpx;
+  box-shadow: 0 0 20rpx rgba(0, 0, 0, 0.15);
+  background-repeat:no-repeat;
+  background-size:100% 100%;
+  -moz-background-size:100% 100%;
+}

@@ -1,0 +1,25 @@
+<!--pages/detailpage_forparticipants/detailpage_forparticipants.wxml-->
+<view class="view" >
+
+<text class="text_title">#{{actId}} </text>
+<text class="text_title">{{actName}}</text>
+
+<text class="text_body">
+
+活动主办方：{{actHost}}
+活动时间：{{actTime}}
+活动地点：{{actArea}}</text>
+
+</view>
+
+<text>\n</text>
+
+<view class="view" >
+
+<text class="text_title">活动成绩单</text>
+
+<text class="text_body">
+
+{{result}}</text>
+
+</view>

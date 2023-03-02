@@ -1,0 +1,142 @@
+<!--pages/detailpage_forparticipants/detailpage_forparticipants.wxml-->
+<view class="view" >
+
+<text class="text_title">#{{actId}} </text>
+<text class="text_title">{{actName}}</text>
+
+<text class="text_body">
+
+活动主办方：{{actHost}}
+活动时间：{{actTime}}
+活动地点：{{actArea}}</text>
+
+</view>
+
+<text>\n</text>
+
+<van-cell-group inset>
+
+<van-cell 
+  is-link
+  size="large" 
+  icon="share-o"
+  title="邀请" 
+  bind:click="onClick" />
+<van-share-sheet
+  show="{{ showShare }}"
+  title="立即分享给好友"
+  options="{{ options }}"
+  bind:select="onSelect"
+  bind:close="onClose"
+/>
+</van-cell-group>
+<text>\n</text>
+<view  wx:if="{{actState == 1}}"  >
+<van-cell-group  inset>
+<!-- test : routesNum_detailpageForParticipants -->
+<view wx:for="{{routesNum_detailpageForParticipants}}">
+  <!-- id 是 “比赛进程n” 按键的id号，里面有index来确定路线 -->
+    <van-cell
+      is-link
+      size="large"
+      title="比赛进程(路线{{index+1}}）"
+      icon="more-o"
+      bind:click="onLinkToProcess"
+      id="process{{index}}"
+    />
+  
+
+  </view>
+</van-cell-group>
+</view>
+
+<text>\n</text>
+
+<!-- 以下为团队赛独有 -->
+<view wx:if="{{actkind == 2}}">
+<van-cell-group inset>
+  <van-cell wx:if="{{actorIdentity_int == 0}}"
+  icon="user-o"
+  size="large" 
+  title="身份" 
+  is-link
+  bind:click="toBecomeLeader"
+  value="{{actorIdentity}}" />
+  <van-cell wx:if="{{actorIdentity_int != 0}}"  
+  icon="user-o"
+  size="large" 
+  title="身份" 
+  value="{{actorIdentity}}" />
+  <van-cell wx:if="{{actorIdentity_int == 1}}"
+  icon="friends-o"
+  size="large" 
+  title="小队列表({{teamNum}}/{{groupSize}})" 
+  is-link
+  bind:click="toChangeList"
+  use-label-slot="true">
+  <text slot="label" decode="{{true}}">{{list}}</text> 
+  </van-cell>
+  <van-cell wx:if="{{actorIdentity_int == 2}}"
+  icon="friends-o"
+  size="large" 
+  title="小队列表({{teamNum}}/{{groupSize}})" 
+  use-label-slot="true">
+  <text slot="label" decode="{{true}}">{{list}}</text> 
+  </van-cell>
+</van-cell-group>
+</view>
+
+<van-popup 
+  show="{{ showBecomeLeader }}" 
+  bind:close="onCloseBL"
+  position="bottom"
+  custom-style="height: 20%;">
+  <van-cell-group>
+  <van-field
+    size="large"
+    value="{{ leaderKey }}"
+    required
+    clearable
+    label="队长密钥"
+    type = "number"
+    maxlength="4"
+    placeholder="请输入队长密钥"
+    bind:change="onLeaderKeyDone"
+  />
+  <view class="button">
+  <van-button  block size="large" color="#47acac" bindtap="onDone">确定</van-button>
+</view>
+  
+</van-cell-group>
+
+</van-popup>
+<van-toast id="van-toast" />
+<van-popup 
+  round
+  show="{{ showChangeGroup }}" 
+  bind:close="onCloseCL"
+  position="bottom"
+  custom-style="height: 80%;">
+<!-- TODO 载入列表 -->
+<van-cell-group title="团队成员({{teamNum}}/{{groupSize}})" >
+  <van-cell icon="user-o" title="{{leaderName}}"></van-cell>
+  <van-cell  wx:for="{{memberArray}}" wx:for-item="member" title="{{member}}">
+    <van-icon slot="right-icon" name="exchange" class="custom-icon" data-name="{{member}}"bind:click="OnMinusMember"  />
+  </van-cell>
+</van-cell-group>
+
+<van-cell-group title="可选参与者" >
+  <van-cell wx:for="{{freeArray}}" wx:for-item="participant" title="{{participant}}">
+    <van-icon slot="right-icon" name="exchange" class="custom-icon" data-name="{{participant}}"bind:click="OnAddMember"  />
+  </van-cell>
+  </van-cell-group>
+
+
+
+
+
+
+
+
+  </van-popup>
+
